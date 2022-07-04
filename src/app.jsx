@@ -4,6 +4,8 @@ import { TodoList } from './components/todo-list';
 import { TodoResults } from './components/todo-results';
 import { TodosContext } from './todo-context';
 import './index.scss';
+/* eslint-disable */ 
+
 
 const todosTemplate = [
   {
@@ -43,8 +45,8 @@ export const App = () => {
 
   return (
     <div className="root">
-      <TodosContext.Provider value={{ todos }}>
-        <TodoList />
+      <TodosContext.Provider value={{ todos,setTodos }}>
+        <TodoList setTodos={setTodos}/>
         <TodoResults />
         <TodoForm />
       </TodosContext.Provider>

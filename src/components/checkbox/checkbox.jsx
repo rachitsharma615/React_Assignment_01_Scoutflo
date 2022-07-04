@@ -1,6 +1,8 @@
 import * as React from 'react';
 import './checkbox.scss';
 
+/* eslint-disable */ 
+
 export const Checkbox = ({
  onClick, checked, onDelete, label, onKeyUp,
 }) => (
@@ -14,7 +16,7 @@ export const Checkbox = ({
       onKeyUp={onKeyUp}
     >
       <input tabIndex="-1" type="checkbox" checked={checked} onChange={onClick} />
-      <span className={checked ? 'checkbox-checked' : ''}>{label}</span>
+      <span className={checked ? 'checkbox-checked' : ''}>{checked===true ? <s>{label}</s>:label}</span>
     </div>
     <button type="button" className="checkbox-delete" onClick={onDelete}>
       x

@@ -6,8 +6,25 @@ export const TodoForm = () => {
   const { todos, setTodos } = React.useContext(TodosContext);
   const [task, setTask] = React.useState('');
 
+/* eslint-disable */ 
+
+
   const handleAddTodo = () => {
     // Fin an ability to add new task
+  
+    const idValue = todos?.length + 1;
+    const data = {
+     id: idValue,
+     label: task,
+     checked: false,
+    };
+    setTodos((OldValue) => [
+      ...OldValue,
+      data,
+    ]);
+  // console.log('Hello', id);
+    // setTodos(data);
+    setTask('')
   };
 
   const handleKeyUp = (e) => {
